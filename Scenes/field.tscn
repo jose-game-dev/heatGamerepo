@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://fd3ptjavp13d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkatj"]
+size = Vector2(329, 20)
+
+[node name="Field" type="Node2D"]
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="top" type="CollisionShape2D" parent="Walls"]
+position = Vector2(164, -10)
+shape = SubResource("RectangleShape2D_pkatj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
