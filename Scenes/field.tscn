@@ -1,18 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://fd3ptjavp13d"]
+[gd_scene load_steps=6 format=3 uid="uid://fd3ptjavp13d"]
+
+[ext_resource type="PackedScene" uid="uid://dadvjd1ba2lac" path="res://Scenes/flying_mob.tscn" id="1_8juqs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pkatj"]
-size = Vector2(329, 20)
+size = Vector2(1152, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8juqs"]
+size = Vector2(1152, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2mji"]
+size = Vector2(52, 597)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbyqf"]
+size = Vector2(62, 597)
 
 [node name="Field" type="Node2D"]
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="top" type="CollisionShape2D" parent="Walls"]
-position = Vector2(164, -10)
+position = Vector2(576, -37.5)
 shape = SubResource("RectangleShape2D_pkatj")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls"]
+[node name="bottom" type="CollisionShape2D" parent="Walls"]
+position = Vector2(576, 622.5)
+shape = SubResource("RectangleShape2D_8juqs")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls"]
+[node name="left" type="CollisionShape2D" parent="Walls"]
+position = Vector2(-26, 298.5)
+shape = SubResource("RectangleShape2D_s2mji")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls"]
+[node name="right" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1183, 298.5)
+shape = SubResource("RectangleShape2D_bbyqf")
+
+[node name="flying_mob" parent="." instance=ExtResource("1_8juqs")]
+position = Vector2(340, 175)
+scale = Vector2(2, 2)
