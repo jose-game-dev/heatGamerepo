@@ -22,6 +22,12 @@ size = Vector2(62, 597)
 script = ExtResource("1_s1lr2")
 flying_mob_node = ExtResource("1_8juqs")
 
+[node name="Test Area" type="Node" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Test Area"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Test Area/CharacterBody2D"]
+
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="top" type="CollisionShape2D" parent="Walls"]
@@ -42,7 +48,7 @@ shape = SubResource("RectangleShape2D_bbyqf")
 
 [node name="background" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(576, 304)
+position = Vector2(575, 303)
 scale = Vector2(4.49973, 4.09173)
 texture = ExtResource("2_bbyqf")
 region_enabled = true
@@ -83,7 +89,7 @@ wait_time = 4.0
 one_shot = true
 
 [node name="Laugh_mob" parent="." instance=ExtResource("5_fir65")]
-position = Vector2(552, 456)
+position = Vector2(493, 270)
 scale = Vector2(5.57942, 3.71595)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
