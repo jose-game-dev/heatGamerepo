@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://fd3ptjavp13d"]
+[gd_scene load_steps=10 format=3 uid="uid://fd3ptjavp13d"]
 
 [ext_resource type="PackedScene" uid="uid://dadvjd1ba2lac" path="res://Scenes/flying_mob.tscn" id="1_8juqs"]
 [ext_resource type="Script" uid="uid://3vj8c1am7xvi" path="res://Scenes/field.gd" id="1_s1lr2"]
 [ext_resource type="Texture2D" uid="uid://dr7vsyf2p8wvj" path="res://Assets/NES - Duck Hunt - Backgrounds - Backgrounds.png" id="2_bbyqf"]
 [ext_resource type="Texture2D" uid="uid://b2nytmglwi0bi" path="res://Assets/NES - Duck Hunt - Backgrounds - Backgrounds (1).png" id="3_s1lr2"]
+[ext_resource type="PackedScene" uid="uid://di08e8c366qo7" path="res://Scenes/laugh_mob.tscn" id="5_fir65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pkatj"]
 size = Vector2(1152, 75)
@@ -38,10 +39,6 @@ shape = SubResource("RectangleShape2D_s2mji")
 [node name="right" type="CollisionShape2D" parent="Walls"]
 position = Vector2(1183, 298.5)
 shape = SubResource("RectangleShape2D_bbyqf")
-
-[node name="flying_mob" parent="." instance=ExtResource("1_8juqs")]
-position = Vector2(340, 175)
-scale = Vector2(2, 2)
 
 [node name="background" type="Sprite2D" parent="."]
 z_index = -1
@@ -80,3 +77,13 @@ offset_right = 1009.0
 offset_bottom = 599.0
 scale = Vector2(1.47394, 1.08475)
 horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Laugh_mob" parent="." instance=ExtResource("5_fir65")]
+position = Vector2(552, 456)
+scale = Vector2(5.57942, 3.71595)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
