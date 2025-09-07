@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="HeatGame"
-run/main_scene="uid://fd3ptjavp13d"
+run/main_scene="uid://cyojqven2qjuo"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
